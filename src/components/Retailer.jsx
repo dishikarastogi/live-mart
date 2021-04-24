@@ -1,23 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import axios from "../utils/axios";
-import shopid from "./Options";
 import ShopItemList from "./ShopItemList";
 
-let itemList,price,quantity;
-function Retailer() {
+
+function Retailer({ shopId}) {
+  const [items, setItems] = useState([]);
   const getShop = () => {
     axios
       .get("/retailer/getAllItems", {
         params: {
-          shop_id: shopid,
+          shop_id: shopId,
         },
       })
-      .then((res) => {
-        console.log("RESPONSE ==== : ", res);
+      .then(({ data }) => {
+        console.log("RESPONSE ==== : ", data);
+        setItems(data);
         debugger;
       })
       .catch((err) => {
@@ -25,7 +26,9 @@ function Retailer() {
       });
   };
   useEffect(() => {
-    getShop();
+    if (shopId) {
+      getShop();
+    }
   }, []);
 
   return (
@@ -54,7 +57,7 @@ function Retailer() {
 
       <div>
         <h2 className='big-heading'>Shop</h2>
-        <ShopItemList itemlist={itemList} price={price} quantity={quantity} />
+        <ShopItemList items={items} />
       </div>
       {/* Footer Section */}
       <section id='toContact'>
@@ -64,4 +67,3 @@ function Retailer() {
   );
 }
 export default Retailer;
-export {price, quantity}

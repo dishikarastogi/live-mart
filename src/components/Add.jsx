@@ -2,10 +2,9 @@ import React, { useEffect, useState, useCallback } from "react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import axios from "../utils/axios";
-import { shopid } from "./Options";
 
 
-function Add() {
+function Add({ shopId }) {
   
   const [state, setState] = useState({
     item_id: "",
@@ -37,7 +36,7 @@ function Add() {
             data,
             {
               params:{
-                shop_id: shopid,
+                shop_id: shopId,
               }
             },
         )
@@ -133,7 +132,7 @@ function Add() {
               />
             </div>
           </div>
-          {/* <div style={{ marginTop: 50 }} className='row mb-3'>
+          <div style={{ marginTop: 50 }} className='row mb-3'>
             <label className='col-md-4 col-form-label itemList'>Image</label>
             <div className='col-md-4'>
               <input
@@ -143,7 +142,7 @@ function Add() {
                 type='file'
               />
             </div>
-          </div> */}
+          </div>
           <div style={{ marginTop: 50 }} className='row mb-3'>
             <div className='col-md-12'>
               <button

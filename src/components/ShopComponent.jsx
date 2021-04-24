@@ -2,38 +2,40 @@
 import React from "react";
 
 
-function ShopComponent(props) {
-
-    
+function ShopComponent({ item: { price, item: { category, subCategory, name, itemImageLink } } }) {
   return (
     <div className='col'>
       <div className='row'></div>
       <div className='col-12 col-md-6 col-lg-4'>
         <div className='card'>
-        <h6 className="card-text"> {props.category} {props.subCategory} </h6>
           <img
             className='card-img-top'
-            src='https://dummyimage.com/600x400/55595c/fff'
+            src={itemImageLink}
             alt='component'
           />
           <div className='card-body'>
             <h4 className='card-title'>
               <a href='product.html' title='View Product'>
-                {props.name}
+                {name}
               </a>
             </h4>
+            <h5 className="card-text">{category} {subCategory}</h5>
             <p className='card-text'>
               
             </p>
             <div className='row'>
               <div className='col'>
-                <p className='btn btn-danger btn-block'>99.00 $</p>
+                <p className='btn btn-danger btn-block'>Rs. {price}</p>
               </div>
               <div className='col'>
                 <a href='#' className='btn btn-success btn-block'>
                   Add to cart
                 </a>
               </div>
+            </div>
+            <div className="row">
+              <div className="col"><a className="link">Edit item</a></div>
+              <div className="col"><a className="link">Delete item</a></div>
             </div>
           </div>
         </div>

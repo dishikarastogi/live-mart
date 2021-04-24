@@ -15,7 +15,7 @@ class Checkbox extends Component{
     }
 
     render(){
-
+        const {setRole} = this.props;
         const handleClick = (event) => {
             let roles = this.state.roles
             roles.forEach(role => {
@@ -23,7 +23,7 @@ class Checkbox extends Component{
                {
                   role.isChecked =  !role.isChecked;
                   if(role.isChecked===true)
-                    roleData=role.value;
+                    setRole(role.value);
                     console.log(roleData);
                }
                     
@@ -87,4 +87,3 @@ class Checkbox extends Component{
 }
 
 export default Checkbox 
-export { roleData }

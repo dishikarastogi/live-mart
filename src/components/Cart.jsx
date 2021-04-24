@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import { latitude, longitude } from "./GeolocationComponent";
 import {userid} from "./Login";
 import axios from "../utils/axios";
 
 
-function Cart() {
+function Cart({location}) {
   const [state, setState] = useState({
     address: "",
     contact: "",
@@ -25,8 +24,8 @@ function Cart() {
       deliveryAddress: state.address,
       deliveryContact: state.contact,
       id: userid,
-      latitude: latitude,
-      longitude: longitude,
+      latitude: location.latitude,
+      longitude: location.longitude,
     };
     console.log(data);
     axios

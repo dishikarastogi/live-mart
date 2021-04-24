@@ -2,30 +2,21 @@ import React from "react";
 import Checkbox from "./Checkbox";
 import { Link } from "react-router-dom";
 import {email,password} from "./SocialMedia";
-import {roleData} from "./Checkbox";
 import axios from "axios";
 
-function Role() {
+function Role({ setRole, role }) {
   const sendDetailstoServer = () => {
     const data = {
       email_id: email,
       password: password,
-      role: roleData,
+      role,
       user_name: email,
-    };
-
-    const options = {
-      headers: {
-        "Content-Type": "application/json",
-        accept: "*/*",
-      },
     };
 
     axios
       .post(
         "http://ec2-35-154-218-25.ap-south-1.compute.amazonaws.com:8080/login/createNewUser",
         data,
-        options
       )
       .then((res) => {
         console.log("RESPONSE ==== : ", res);
@@ -46,7 +37,7 @@ function Role() {
         <header>LIVE MART</header>
       </h1>
       <h3>Choose your role for signIn</h3>
-      <Checkbox />
+      <Checkbox setRole={setRole} />
       <div className='row mb-3 px-3'>
         <div style={{ display: "block", marginTop: 20 }}>
         <Link to='/login'>

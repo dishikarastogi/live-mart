@@ -1,22 +1,24 @@
 import React from "react";
-import { roleData } from "./Checkbox";
 import { useHistory } from "react-router-dom";
 import axios from "../utils/axios";
-import { userSocialId } from "./TypeofUser";
 
 let shopid;
-function OptionsSocial() {
+function OptionsSocial({ role, userId, setShopId }) {
   let history = useHistory();
   const getShopDetail = () => {
     debugger;
     axios
       .get("/retailer/getShopDetail", {
         params: {
-          user_id: userSocialId.id,
+          user_id: userId,
         },
       })
-      .then((res) => {
-        console.log("RESPONSE ==== : ", res);
+      .then(({ data }) => {
+        console.log("RESPONSE ==== : ", data);
+        debugger;
+        if (data.id) {
+          setShopId(data.id);
+        }
         history.push("/retailer");
       })
       .catch((err) => {
@@ -24,11 +26,11 @@ function OptionsSocial() {
       });
   };
   const renderRole = () => {
-    if (roleData === "Customer") {
+    if (role === "Customer") {
       history.push("/customer");
-    } else if (roleData === "Retailer") {
+    } else if (role === "Retailer") {
       return getShopDetail();
-    } else if (roleData === "Wholesaler") {
+    } else if (role === "Wholesaler") {
       history.push("/wholesaler");
     }
   };

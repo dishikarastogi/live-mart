@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import GeolocationComponent from "./GeolocationComponent";
 import SocialMediaLogin from "./SocialMediaLogin";
 import axios from "../utils/axios";
-import Checkbox, { roleData } from "./Checkbox";
+import Checkbox from "./Checkbox";
 
 let mail,userid;
-function Login(props) {
+function Login({ role, setRole, setUserId }) {
   let history = useHistory();
  
   const [state, setState] = useState({
@@ -43,7 +42,7 @@ function Login(props) {
   };
 
   const login = (e) => {
-    console.log(state.email, state.password, roleData);
+    console.log(state.email, state.password, role);
     axios
       .get(
         "/login",
@@ -51,13 +50,13 @@ function Login(props) {
           params: {
             email_id: state.email,
             password: state.password,
-            role: roleData,
+            role,
           },
         }
       )
       .then((res) => {
         console.log('login successful', res);
-        userid= res.data.data;
+        setUserId(res.data.data);
         return generateOtp();
       })
       .catch((err) => {
@@ -92,7 +91,6 @@ function Login(props) {
                 <h6 className='mb-0 mr-4 mt-2'>Log in with</h6>
 
                 <SocialMediaLogin />
-                <GeolocationComponent />
               </div>
               <div className='row px-3 mb-4'>
                 <div className='line'></div>{" "}
@@ -140,7 +138,7 @@ function Login(props) {
                 <div
                   className='dropdown-menu'
                   onClick={(e) => e.stopPropagation()}>
-                  <Checkbox />
+                  <Checkbox setRole={setRole} />
                 </div>
               </div>
               <div className='row px-3'></div>

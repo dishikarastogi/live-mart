@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import SocialMedia from "./SocialMedia";
-import Checkbox, { roleData } from "./Checkbox";
+import Checkbox from "./Checkbox";
 import axios from "axios";
 
-function Signup(props) {
+function Signup({ showError, role, setRole}) {
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -25,7 +25,7 @@ function Signup(props) {
       alert("Matched");
       sendDetailstoServer();
     } else {
-      props.showError("Passwords do not match");
+      showError("Passwords do not match");
       //alert("Passwords are not matched");
     }
     console.log("Username is:", state.email);
@@ -35,7 +35,7 @@ function Signup(props) {
     const data = {
       email_id: state.email,
       password: state.password,
-      role: roleData,
+      role,
       user_name: state.email,
     };
 
@@ -152,7 +152,7 @@ function Signup(props) {
                   <div
                     className='dropdown-menu'
                     onClick={(e) => e.stopPropagation()}>
-                    <Checkbox />
+                    <Checkbox setRole={setRole} />
                   </div>
                 </div>
 

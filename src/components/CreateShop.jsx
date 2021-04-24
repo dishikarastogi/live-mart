@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import axios from "../utils/axios";
-import { latitude, longitude } from "./GeolocationComponent";
-import { roleData } from "./Checkbox";
-import { userid } from "./Login";
 
-function CreateShop() {
+function CreateShop({ location, role, setShopId, setUserId, userId }) {
   const [state, setState] = useState({
     shop: "",
     address: "",
@@ -22,26 +19,28 @@ function CreateShop() {
   const createShop = (e) => {
     e.preventDefault();
     const data = {
-      latitude: latitude,
-      longitude: longitude,
-      role: roleData,
+      latitude: location.latitude,
+      longitude: location.longitude,
+      role,
       shop_address: state.address,
       shop_contact: state.contact,
       shop_name: state.shop,
-      user_id: userid,
+      user_id: userId,
     };
     console.log(data);
-      axios
-        .post(
-            "/retailer/create-shop",
-            data,
-        )
-        .then((res) => {
-            console.log("RESPONSE ==== : ", res);
-          })
-          .catch((err) => {
-            console.log("ERROR: ====", err);
-          });
+    axios
+      .post(
+        "/retailer/createShop",
+        data,
+      )
+      .then(({ data }) => {
+        setUserId(data.userDetails.id);
+        setShopId(data.id);
+        console.log("RESPONSE ==== : ", data);
+      })
+      .catch((err) => {
+        console.log("ERROR: ====", err);
+      });
   };
 
   return (
@@ -88,7 +87,7 @@ function CreateShop() {
                   type='submit'
                   value='submit'
                   className='btn btn-dark'>
-                    Submit
+                  Submit
                 </button>
               </form>
             </div>
