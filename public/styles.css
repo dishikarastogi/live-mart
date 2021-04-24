@@ -1,0 +1,481 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background-color: #bfcba8;
+    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  }
+  /* Home page */
+  .user-button{
+    margin: 5% 3% 5% 0;
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+  }
+  .big-heading{
+    margin-top: 3ch;
+    font-weight: 400;
+    font-size: 3.5rem;
+  }
+  .title-heading{
+    font-weight: 900;
+    font-size: 4rem;
+  }
+/* Login page */
+
+
+.card0 {
+  box-shadow: 0px 4px 8px 0px #757575;
+  border-radius: 0px
+}
+
+.card2 {
+  margin: 0px 40px
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 35px
+}
+
+.image {
+  width: 360px;
+  height: 280px
+}
+
+.border-line {
+  border-right: 1px solid #EEEEEE
+}
+.line {
+  height: 1px;
+  width: 45%;
+  background-color: #E0E0E0;
+  margin-top: 10px
+}
+
+.or {
+  width: 10%;
+  font-weight: bold
+}
+
+.text-sm {
+  font-size: 14px !important
+}
+
+::placeholder {
+  color: #BDBDBD;
+  opacity: 1;
+  font-weight: 300
+}
+
+:-ms-input-placeholder {
+  color: #BDBDBD;
+  font-weight: 300
+}
+
+::-ms-input-placeholder {
+  color: #BDBDBD;
+  font-weight: 300
+}
+
+input,
+textarea {
+  padding: 10px 12px 10px 12px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2C3E50;
+  font-size: 14px;
+  letter-spacing: 1px
+}
+
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #063815;
+  outline-width: 0
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0
+}
+
+a {
+  color: inherit;
+  cursor: pointer
+}
+
+.btn-blue {
+  background-color: #063815;
+  width: 150px;
+  color: #fff;
+  border-radius: 2px
+}
+
+.btn-blue:hover {
+  background-color: rgb(57, 146, 91);
+  cursor: pointer
+}
+
+.bg-blue {
+  color: #fff;
+  background-color: #063815
+}
+
+@media screen and (max-width: 991px) {
+  .logo {
+      margin-left: 0px;
+  }
+
+  .image {
+      width: 300px;
+      height: 220px
+  }
+
+  .border-line {
+      border-right: none
+  }
+
+  .card2 {
+      border-top: 1px solid #ffffff !important;
+      margin: 0px 15px
+  }
+}
+/* OTP Page */
+.cardOTP {
+  width: 600px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  border: none;
+  height:600px;
+  position: relative
+}
+
+.containerOTP {
+  height: 100vh
+}
+
+.mobile-text {
+  color: #989696b8;
+  font-size: 15px;
+  margin-top: 50px;
+}
+
+.form-control {
+  margin-top: 50px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #063815;
+  outline: 0;
+  box-shadow: none
+}
+
+.cursor {
+  cursor: pointer
+}
+/* Customer Page */
+
+.bloc_left_price {
+  color: #c01508;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+}
+.category_block li:hover {
+  background-color: #007bff;
+}
+.category_block li:hover a {
+  color: #ffffff;
+}
+.category_block li a {
+  color: #343a40;
+}
+.add_to_cart_block .price {
+  color: #c01508;
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
+  margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+  color: #343a40;
+  text-align: center;
+  text-decoration: line-through;
+  font-size: 140%;
+}
+.product_rassurance {
+  padding: 10px;
+  margin-top: 15px;
+  background: #ffffff;
+  border: 1px solid #6c757d;
+  color: #6c757d;
+}
+.product_rassurance .list-inline {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+  color: #343a40;
+}
+.reviews_product .fa-star {
+  color: gold;
+}
+.pagination {
+  margin-top: 20px;
+}
+footer {
+  background-color: #063815 !important;
+  margin: 20px 0 0;
+  padding: 40 40 0;
+}
+footer a {
+  color: #f8f9fa!important
+}
+.navitem{
+  margin: 0 50px 0 50px;
+  font-size: 20px;
+}
+.navbar{
+  background-color:#063815 !important;
+}
+.navcolor{
+  color:rgb(255, 255, 255) !important;
+}
+.item-sub{
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Add Page */
+legend{
+  font-size: 2rem;
+  margin-top: 30;
+  font-weight: bold;
+}
+.itemList{
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+/* Orders */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.10rem
+}
+
+.card-header:first-child {
+    border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px
+}
+
+.track .step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -18px;
+    text-align: center;
+    position: relative
+}
+
+.track .step.active:before {
+    background: #FF5722
+}
+
+.track .step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 18px
+}
+
+.track .step.active .icon {
+    background: #ee5435;
+    color: #fff
+}
+
+.track .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd
+}
+
+.track .step.active .text {
+    font-weight: 400;
+    color: #000
+}
+
+.track .text {
+    display: block;
+    margin-top: 7px
+}
+
+.itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%
+}
+
+.itemside .aside {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.img-sm {
+    width: 80px;
+    height: 80px;
+    padding: 7px
+}
+
+ul.row,
+ul.row-sm {
+    list-style: none;
+    padding: 0
+}
+
+.itemside .info {
+    padding-left: 15px;
+    padding-right: 7px
+}
+
+.itemside .title {
+    display: block;
+    margin-bottom: 5px;
+    color: #212529
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem
+}
+
+.btn-warning {
+    color: #ffffff;
+    background-color: #ee5435;
+    border-color: #ee5435;
+    border-radius: 1px
+}
+
+.btn-warning:hover {
+    color: #ffffff;
+    background-color: #ff2b00;
+    border-color: #ff2b00;
+    border-radius: 1px
+}
+/* Add a new Shop */
+
+.form_main h4 {
+  font-family: roboto;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.heading {
+  border-bottom: 1px solid #fcab0e;
+  padding-bottom: 9px;
+  position: relative;
+}
+.heading span {
+  background: #9e6600 none repeat scroll 0 0;
+  bottom: -2px;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  width: 75px;
+}   
+.form {
+  border-radius: 7px;
+  padding: 6px;
+}
+.txt[type="text"] {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px 0 10px 5px;
+  width: 100%;
+}
+.txt_3[type="text"] {
+  margin: 10px 0 0;
+  padding: 10px 0 10px 5px;
+  width: 100%;
+}
+.txt2[type="submit"] {
+  background: #242424 none repeat scroll 0 0;
+  border: 1px solid #4f5c04;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 35px;
+  margin: 10px 0;
+  padding: 0;
+  text-transform: uppercase;
+  width: 30%;
+}
+.txt2:hover {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #5793ef;
+  transition: all 0.5s ease 0s;
+}
