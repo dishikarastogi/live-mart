@@ -14,7 +14,6 @@ function Options({ userId, role, setShopId }) {
       })
       .then(({ data }) => {
         console.log("RESPONSE ==== : ", data);
-        debugger;
         if (data.id) {
           setShopId(data.id);
         }
