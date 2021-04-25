@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React ,{ Component } from "react"
 
-var roleData;
+
 class Checkbox extends Component{
     constructor(props){
         super(props)
@@ -24,7 +24,7 @@ class Checkbox extends Component{
                   role.isChecked =  !role.isChecked;
                   if(role.isChecked===true)
                     setRole(role.value);
-                    console.log(roleData);
+                    console.log(role);
                }
                     
             })

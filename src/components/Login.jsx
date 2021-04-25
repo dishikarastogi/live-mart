@@ -22,6 +22,7 @@ function Login({ role, setRole, setUserId }) {
     }));
   };
   mail=state.email;
+  
   const generateOtp = (e) => {
     axios
       .get(
@@ -57,6 +58,7 @@ function Login({ role, setRole, setUserId }) {
       .then((res) => {
         console.log('login successful', res);
         setUserId(res.data.data);
+        userid=res.data.data;
         return generateOtp();
       })
       .catch((err) => {

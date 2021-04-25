@@ -6,7 +6,7 @@ let shopid;
 function OptionsSocial({ role, userId, setShopId }) {
   let history = useHistory();
   const getShopDetail = () => {
-    debugger;
+
     axios
       .get("/retailer/getShopDetail", {
         params: {
@@ -15,7 +15,7 @@ function OptionsSocial({ role, userId, setShopId }) {
       })
       .then(({ data }) => {
         console.log("RESPONSE ==== : ", data);
-        debugger;
+   
         if (data.id) {
           setShopId(data.id);
         }

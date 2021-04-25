@@ -28,7 +28,7 @@ function Cart(props) {
     };
     console.log(data);
     axios
-      .post("/retailer/createDeliveryAddress", data)
+      .post("/customer/createDeliveryAddress", data)
       .then((res) => {
         console.log("RESPONSE ==== : ", res);
       })

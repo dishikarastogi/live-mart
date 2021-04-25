@@ -19,7 +19,6 @@ function Retailer({ shopId}) {
       .then(({ data }) => {
         console.log("RESPONSE ==== : ", data);
         setItems(data);
-        debugger;
       })
       .catch((err) => {
         console.log("ERROR: ====", err);

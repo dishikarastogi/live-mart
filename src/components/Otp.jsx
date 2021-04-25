@@ -25,7 +25,7 @@ function Otp() {
         .then((res) => {
           console.log("RESPONSE ==== : ", res)
           if(res.data.success===true){
-            debugger;
+      
             history.push("/options"); 
           }
           else{

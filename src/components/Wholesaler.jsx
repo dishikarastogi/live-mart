@@ -16,6 +16,10 @@ function Wholesaler(){
             <Link to="/transaction">
             <Button action="Retailer Transactions"/>
             </Link>
+            <Link to="/wholesaler-create-shop">
+            <Button action="Create a Shop"/>
+            </Link>
+            
         </div>
 {/* Footer Section */}
 <section style={{marginTop: 140}} id="toContact">
