@@ -4,6 +4,7 @@ import axios from "../utils/axios";
 
 function Options({ userId, role, setShopId }) {
   let history = useHistory();
+
   const getShopDetail = () => {
     axios
       .get("/retailer/getShopDetail",
@@ -23,6 +24,7 @@ function Options({ userId, role, setShopId }) {
         console.log("ERROR: ====", err);
       });
   };
+  
   const renderRole = () => {
     if (role === "Customer") {
       history.push("/customer");

@@ -11,6 +11,7 @@ import Options from "./Options";
 import Add from "./Add";
 import Transaction from "./Transaction";
 import Cart from "./Cart";
+import CustomerCart from "./CustomerCart";
 import Feedback from "./Feedback";
 import Role from "./Role";
 import OtpforMedia from "./OtpforMedia";
@@ -19,6 +20,7 @@ import CustomerOrders from "./CustomerOrders";
 import TypeofUser from "./TypeofUser";
 import CreateShop from "./CreateShop";
 import OptionsSocial from "./OptionsSocial";
+import WholesalerCreateShop from "./WholesalerCreateShop";
 
 
 function App() {
@@ -58,7 +60,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/login' exact>
-            <Login setUserId={setUserId} setRole={setRole} showError={updateErrorMessage} updateTitle={updateTitle} />
+            <Login role={role} setUserId={setUserId} setRole={setRole} showError={updateErrorMessage} updateTitle={updateTitle} />
           </Route>
           <Route path='/signup' exact={true}>
             <Signup role={role} setRole={setRole} showError={updateErrorMessage} updateTitle={updateTitle} />
@@ -68,7 +70,9 @@ function App() {
           <Route path='/options' exact>
             <Options setShopId={setShopId} role={role} userId={userId} />
           </Route>
-          <Route path='/customer' exact component={Customer} />
+          <Route path='/customer' exact>
+            <Customer userId={userId}/>
+          </Route>
           <Route path='/retailer' exact>
             <Retailer shopId={shopId} />
           </Route>
@@ -78,7 +82,10 @@ function App() {
           </Route>
           <Route path='/transaction' exact component={Transaction} />
           <Route path='/cart' exact>
-            <Cart location={location} />
+            <Cart location={location} userId={userId}/>
+          </Route>
+          <Route path='/customercart' exact>
+            <CustomerCart location={location} userId={userId}/>
           </Route>
           <Route path='/role' exact component={Role} />
           <Route path='/options-social' exact>
@@ -91,6 +98,9 @@ function App() {
           </Route>
           <Route path='/create-shop' exact>
             <CreateShop setShopId={setShopId} setUserId={setUserId} userId={userId} role={role} location={location} />
+          </Route>
+          <Route path='/wholesaler-create-shop' exact>
+            <WholesalerCreateShop setShopId={setShopId} setUserId={setUserId} userId={userId} role={role} location={location} />
           </Route>
           <Route path='/feedback' exact component={Feedback} />
         </Switch>

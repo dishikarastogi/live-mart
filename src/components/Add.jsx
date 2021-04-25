@@ -132,7 +132,7 @@ function Add({ shopId }) {
               />
             </div>
           </div>
-          <div style={{ marginTop: 50 }} className='row mb-3'>
+          {/* <div style={{ marginTop: 50 }} className='row mb-3'>
             <label className='col-md-4 col-form-label itemList'>Image</label>
             <div className='col-md-4'>
               <input
@@ -142,7 +142,7 @@ function Add({ shopId }) {
                 type='file'
               />
             </div>
-          </div>
+          </div> */}
           <div style={{ marginTop: 50 }} className='row mb-3'>
             <div className='col-md-12'>
               <button

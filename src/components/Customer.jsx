@@ -1,10 +1,36 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import Item from "./Item";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import axios from "../utils/axios"
+import CustomerItemList from "./CustomerItemList";
 
-function Customer(){
+function Customer({userId}){
+    //const list= "Vegetables";
+    const [items, setItems] = useState([]);
+
+    const getItemsByCategory = () => {
+      axios
+        .get("/customer/getAllItems", {
+          params: {
+          },
+        })
+        .then(({ data }) => {
+          console.log("RESPONSE ==== : ", data);
+          setItems(data);
+          console.log(userId);
+        })
+        .catch((err) => {
+          console.log("ERROR: ====", err);
+        });
+    };
+    useEffect(() => {
+        getItemsByCategory();
+    },[]);
+
+
     return <div>
     <section id="toTheTop">
     <nav style={{height:150}} className="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +47,7 @@ function Customer(){
                     <a className="nav-link navcolor" href="#toTheTop">Categories <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item navitem">
-                    <a className="nav-link navcolor" href="./cart">Cart</a>
+                    <a className="nav-link navcolor" href="./customercart">Cart</a>
                 </li>
                 <li className="nav-item navitem">
                     <a className="nav-link navcolor" href="#toContact">Contact</a>
@@ -72,6 +98,7 @@ function Customer(){
                         <li className="list-group-item"><a href="#Readymade">Readymade</a></li>
                         <li className="list-group-item"><a href="#Fruits">Fruits</a></li>
                         <li className="list-group-item"><a href="#Grocery">Grocery</a></li>
+                        <li className="list-group-item"><a href="#BeautyandHygiene">Beauty and Hygiene</a></li>
                     </ul>
                 </div>
 
@@ -94,12 +121,18 @@ function Customer(){
                         source="https://tinyurl.com/grocliv"
                         name="Grocery"
                     />
+                    <Item
+                        source="https://i.insider.com/5dcadd667eece52e5d579826?width=1136&format=jpeg"
+                        name="Beauty and Hygiene"
+                    />
                     
                 </div>
             </div>
     
         </div>
-        <section id="Vegetables">
+        <CustomerItemList items={items} userid={userId}/>
+
+        {/* <section id="Vegetables">
             <h3 className="item-sub">Vegetables</h3>
             <Link to="/subcategory">
             <Item
@@ -118,7 +151,7 @@ function Customer(){
         <section id="Grocery">
             <h3 className="item-sub">Grocery</h3>
         </section>
-
+ */}
     </div>
     
     {/* Footer Section */}
