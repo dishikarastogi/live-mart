@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "../utils/axios";
 
-let shopid;
 function OptionsSocial({ role, userId, setShopId }) {
   let history = useHistory();
-  const getShopDetail = () => {
+  const getShopDetail = useCallback(() => {
     axios
       .get("/retailer/getShopDetail", {
         params: {
@@ -22,8 +21,9 @@ function OptionsSocial({ role, userId, setShopId }) {
       .catch((err) => {
         console.log("ERROR: ====", err);
       });
-  };
-  const renderRole = () => {
+  }, [history, userId, setShopId]);
+
+  useEffect(() => {
     if (role === "Customer") {
       history.push("/customer");
     } else if (role === "Retailer") {
@@ -31,7 +31,7 @@ function OptionsSocial({ role, userId, setShopId }) {
     } else if (role === "Wholesaler") {
       history.push("/wholesaler");
     }
-  };
+  }, [getShopDetail, history, role]);
   return (
     <div>
       <img
@@ -44,10 +44,8 @@ function OptionsSocial({ role, userId, setShopId }) {
         <header>LIVE MART</header>
       </h1>
       <h3>WELCOME</h3>
-      {renderRole()}
     </div>
   );
 }
 
 export default OptionsSocial;
-export { shopid };

@@ -57,11 +57,10 @@ function CustomerShopComponent({
         setQty(e.target.value);
     }
   return (
-    <div style={{ display: "flex", flexDirection: "row" }} className='col'>
-      <div className='row'></div>
+    <div className='col'>
       <div className='col-12 col-md-6 col-lg-4'>
         <div style={{ flex: 1, width: 20 + "rem" }} className='card'>
-          <img className='card-img-top' src={itemImageLink} alt='component' />
+          <div className='card-img-top' style={{ height: "200px", backgroundImage: `url(${itemImageLink})`, backgroundSize: "cover", backgroundPosition: "center" } } />
           <div className='card-body'>
             <h4 className='card-title'>
               <a href='product.html' title='View Product'>
@@ -85,9 +84,9 @@ function CustomerShopComponent({
             <div className='row'></div>
           </div>
           <div className='col'>
-            <input value={qty} placeholder='Buy Qunatity' onChange={handleChange}/>
+            <input value={qty} placeholder='Buy Quantity' onChange={handleChange}/>
           </div>
-          <div className='col'>
+          <div className='col mb-3'>
             <button onClick={addtoCart} className='btn btn-md btn-dark'>Add to Cart</button>
           </div>
         </div>

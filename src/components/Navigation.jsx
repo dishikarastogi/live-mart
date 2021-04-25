@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react"
+import { Link } from "react-router-dom";
+
 function Navigation(){
     return <nav style={{height:150}} className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
@@ -15,7 +17,7 @@ function Navigation(){
                     <a className="nav-link navcolor" href="#toTheTop">Categories <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item navitem">
-                    <a className="nav-link navcolor" href="./cart">Cart</a>
+                    <Link to="/cart" className="nav-link navcolor">Cart</Link>
                 </li>
                 <li className="nav-item navitem">
                     <a className="nav-link navcolor" href="#toContact">Contact</a>
@@ -24,11 +26,11 @@ function Navigation(){
             </ul>
         </div>
         <div>
-        <form class="form-inline my-2 my-lg-0">
-            <a class="btn btn-success btn-sm ml-3" href="./cart">
-                <i class="fa fa-shopping-cart"></i> Cart
-                <span class="badge badge-light">3</span>
-            </a>
+        <form className="form-inline my-2 my-lg-0">
+            <Link className="btn btn-success btn-sm ml-3" to="/cart">
+                <i className="fa fa-shopping-cart"></i> Cart
+                <span className="badge badge-light">3</span>
+            </Link>
         </form>
         </div>
     </div>

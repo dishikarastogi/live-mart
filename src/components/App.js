@@ -87,9 +87,11 @@ function App() {
           <Route path='/customercart' exact>
             <CustomerCart location={location} userId={userId}/>
           </Route>
-          <Route path='/role' exact component={Role} />
+          <Route path='/role' exact>
+            <Role setRole={setRole} role={role} />
+          </Route>
           <Route path='/options-social' exact>
-            <OptionsSocial setShopId={setShopId} userId={userId} />
+            <OptionsSocial role={role} setShopId={setShopId} userId={userId} />
           </Route>
           <Route path='/subcategory' exact component={SubCategory} />
           <Route path='/custorders' exact component={CustomerOrders} />

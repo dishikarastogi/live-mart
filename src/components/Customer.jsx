@@ -7,16 +7,13 @@ import Footer from "./Footer";
 import axios from "../utils/axios"
 import CustomerItemList from "./CustomerItemList";
 
-function Customer({userId}){
+function Customer({userId}) {
     //const list= "Vegetables";
     const [items, setItems] = useState([]);
 
     const getItemsByCategory = () => {
       axios
-        .get("/customer/getAllItems", {
-          params: {
-          },
-        })
+        .get("/customer/getAllItems")
         .then(({ data }) => {
           console.log("RESPONSE ==== : ", data);
           setItems(data);
@@ -47,7 +44,7 @@ function Customer({userId}){
                     <a className="nav-link navcolor" href="#toTheTop">Categories <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item navitem">
-                    <a className="nav-link navcolor" href="./customercart">Cart</a>
+                    <Link to="/cart" className="nav-link navcolor">Cart</Link>
                 </li>
                 <li className="nav-item navitem">
                     <a className="nav-link navcolor" href="#toContact">Contact</a>
@@ -61,10 +58,10 @@ function Customer({userId}){
         </div>
         <div>
         <form className="form-inline my-2 my-lg-0">
-            <a className="btn btn-success btn-sm ml-3" href="./cart">
+            <Link className="btn btn-success btn-sm ml-3" to="/cart">
                 <i className="fa fa-shopping-cart"></i> Cart
                 <span className="badge badge-light">3</span>
-            </a>
+            </Link>
         </form>
         </div>
     </div>
